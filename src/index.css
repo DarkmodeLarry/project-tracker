@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
+    'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
+    'Courier New', monospace;
+  --font-apple: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --nunito: 'Nunito Sans', sans-serif;
+  --code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --heading-color: #444;
+  --text-color: #999;
+  --primary-color: #8d69f1;
+  --highlight-color: #d13267;
+  --bg-color: #f4f4f4;
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+@layer components {
+  ul,
+  li,
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply m-0 p-0;
+  }
+  ul {
+    @apply list-none;
+  }
+  .page-title {
+    @apply text-md text-[var(--heading-color)] inline-block capitalize;
+  }
+  .btn {
+    @apply py-2 px-3 rounded text-[var(--primary-color)] cursor-pointer text-base border border-[var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-300;
+  }
+  label {
+    @apply block my-6 mx-auto text-gray-600;
+  }
+  label span {
+    @apply block mb-2;
+  }
+  input,
+  textarea {
+    @apply py-2 px-2 text-stone-500 w-full box-border border-2 border-[#ddd] rounded-md;
+  }
+  textarea {
+    @apply min-h-[160px];
+  }
+  .error {
+    @apply text-red-500 bg-pink-400 border-2 rounded-md p-2 my-3;
+  }
+}
